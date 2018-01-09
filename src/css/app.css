@@ -1,0 +1,13 @@
+.🔈 {
+  background: hsla(0,0%,100%,.5);
+  border: 1px solid hsla(0, 0%, 0%, 0.09);
+  display: grid;
+  padding: 1em;
+  grid-gap: 1em;
+}
+
+.🔈 input {
+  grid-column: 2/4;
+  grid-row: 1;
+  justify-self: stretch;
+}

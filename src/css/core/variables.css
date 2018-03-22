@@ -1,0 +1,25 @@
+:root {
+  /** 
+   * Units
+   */
+  --breakpoint-compact: 360px;
+  --breakpoint-normal: 640px;
+  --breakpoint-large: 1024px;
+
+  --gutter: 18px;
+
+  /**
+   * Colors
+   */
+  --white: #fff;
+  --black: #000;
+  --k1: #eee;
+  --k2: #999;
+  --k3: #666;
+  --k4: #333;
+
+  /**
+   * Fonts
+   */
+  --mono: "Fira Code", "Lucida Console", Monaco, "Courier New", Courier, monospace;
+}

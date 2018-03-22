@@ -1,13 +1,10 @@
-.🔈 {
-  background: hsla(0,0%,100%,.5);
-  border: 1px solid hsla(0, 0%, 0%, 0.09);
-  display: grid;
-  padding: 1em;
-  grid-gap: 1em;
-}
+/**
+ * Core Imports
+ */
+@import "./core/variables.css";
+@import "./core/elements.css";
 
-.🔈 input {
-  grid-column: 2/4;
-  grid-row: 1;
-  justify-self: stretch;
-}
+/**
+ * Components
+ */
+@import "./components/audio-bar.css";

@@ -51,6 +51,7 @@
   },
   "devDependencies": {
     "node-sass": "^4.7.2",
+    "react-svg-loader": "^2.1.0",
     "sass-loader": "^6.0.6"
   },
   "jest": {

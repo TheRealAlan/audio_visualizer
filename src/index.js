@@ -1,18 +1,16 @@
-import React from 'react';
-import { render } from 'react-dom';
+import React from "react";
+import { render } from "react-dom";
 
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import AudioVisualizer from "./AudioVisualizer";
+import registerServiceWorker from "./registerServiceWorker";
+
+import "normalize.css";
+import "./css/app.css";
 
 const Root = () => {
-  return (
-    <App />
-  );
+  return <AudioVisualizer />;
 };
 
-render (
-  <Root />,
-  document.getElementById('root')
-);
+render(<Root />, document.getElementById("root"));
 
 registerServiceWorker();

@@ -5,4 +5,5 @@
   top: 0;
   width: 100%;
   height: calc(100vh - var(--audiobar-height));
+  z-index: 0;
 }

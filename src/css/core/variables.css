@@ -17,9 +17,17 @@
   --k2: #999;
   --k3: #666;
   --k4: #333;
+  --k5: #111;
 
   /**
    * Fonts
    */
   --mono: "Fira Code", "Lucida Console", Monaco, "Courier New", Courier, monospace;
+
+  /** 
+   * Component Units
+   */
+
+  /* AudioBar */
+  --audiobar-height: 90px;
 }

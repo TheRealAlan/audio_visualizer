@@ -1,5 +1,7 @@
 import React from "react";
 
+import ControlBar from "./ControlBar";
+
 /**
  * Import SVG Icons
  */
@@ -16,25 +18,25 @@ class TrackControls extends React.Component {
       <div className="track-controls">
         <div className="track-controls__buttons">
           <button className="control-button">
-            <ShuffleIcon height={20} />
+            <ShuffleIcon />
           </button>
           <button className="control-button">
-            <PreviousIcon height={20} />
+            <PreviousIcon />
           </button>
           <button className="control-button control-button__play">
-            <PlayIcon width={50} />
+            <PlayIcon />
           </button>
           <button className="control-button">
-            <NextIcon height={20} />
+            <NextIcon />
           </button>
           <button className="control-button">
-            <LoopIcon height={20} />
+            <LoopIcon />
           </button>
         </div>
         <div className="track-controls__bar">
           <div className="control-time">0:00</div>
-          <div className="control-bar" />
-          <div className="control-length">0:00</div>
+          <ControlBar />
+          <div className="control-time">0:00</div>
         </div>
       </div>
     );

@@ -2,7 +2,7 @@ import React from "react";
 
 class Visualizer extends React.Component {
   render() {
-    return <div className="visualizer" />;
+    return <canvas className="visualizer" />;
   }
 }
 

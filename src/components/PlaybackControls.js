@@ -1,5 +1,7 @@
 import React from "react";
 
+import ControlBar from "./ControlBar";
+
 import MenuIcon from "../svg/menu.svg";
 import VolumeIcon from "../svg/volume.svg";
 import MuteIcon from "../svg/mute.svg";
@@ -8,13 +10,15 @@ class PlaybackControls extends React.Component {
   render() {
     return (
       <div className="playback-controls">
-        <button className="playback-button icon-menu">
-          <MenuIcon width={50} />
-        </button>
-        <button className="playback-button icon-volume">
-          <VolumeIcon width={50} />
-        </button>
-        <div className="volume-bar" />
+        <div className="playback-controls__inner">
+          <button className="control-button">
+            <MenuIcon />
+          </button>
+          <button className="control-button">
+            <VolumeIcon />
+          </button>
+          <ControlBar />
+        </div>
       </div>
     );
   }

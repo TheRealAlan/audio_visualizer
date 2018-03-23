@@ -1,0 +1,8 @@
+.visualizer {
+  background-color: var(--k5);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: calc(100vh - var(--audiobar-height));
+}

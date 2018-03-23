@@ -2,6 +2,7 @@ import React from "react";
 
 import Visualizer from "./Visualizer";
 import AudioBar from "./AudioBar";
+import QueueList from "./QueueList";
 
 import soundFile from "../tracks/Broke_For_Free_-_01_-_Night_Owl.mp3";
 
@@ -77,6 +78,9 @@ class AudioVisualizer extends React.Component {
           isShuffling={this.state.isShuffling}
           isLooping={this.state.isLooping}
           isMuted={this.state.isMuted}
+          queueOpen={this.state.queueOpen}
+        />
+        <QueueList
           queueOpen={this.state.queueOpen}
         />
       </div>

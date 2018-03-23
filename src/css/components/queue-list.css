@@ -1,0 +1,7 @@
+.queue-list {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--k4);
+  z-index: 1;
+}

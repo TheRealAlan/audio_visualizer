@@ -10,7 +10,7 @@ class AudioBar extends React.Component {
       <div className="audio-bar">
         <TrackInfo />
         <TrackControls
-          togglePlay={this.props.clickPlay}
+          togglePlay={this.props.togglePlay}
           toggleShuffle={this.props.toggleShuffle}
           toggleLoop={this.props.toggleLoop}
           nextTrack={this.props.nextTrack}

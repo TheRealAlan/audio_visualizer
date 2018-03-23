@@ -11,11 +11,17 @@ class PlaybackControls extends React.Component {
     return (
       <div className="playback-controls">
         <div className="playback-controls__inner">
-          <button className="control-button">
-            <MenuIcon />
+          <button
+            className={`control-button ${this.props.queueOpen ? 'is-active' : ''}`}
+            onClick={this.props.toggleQueue}
+          >
+            <MenuIcon/>
           </button>
-          <button className="control-button">
-            <VolumeIcon />
+          <button
+            className="control-button"
+            onClick={this.props.toggleMute}
+          >
+            {this.props.isMuted ? <MuteIcon/> : <VolumeIcon />}
           </button>
           <ControlBar />
         </div>

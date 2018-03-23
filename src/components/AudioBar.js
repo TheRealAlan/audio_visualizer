@@ -9,8 +9,22 @@ class AudioBar extends React.Component {
     return (
       <div className="audio-bar">
         <TrackInfo />
-        <TrackControls />
-        <PlaybackControls />
+        <TrackControls
+          togglePlay={this.props.clickPlay}
+          toggleShuffle={this.props.toggleShuffle}
+          toggleLoop={this.props.toggleLoop}
+          nextTrack={this.props.nextTrack}
+          previousTrack={this.props.previousTrack}
+          isPlaying={this.props.isPlaying}
+          isLooping={this.props.isLooping}
+          isShuffling={this.props.isShuffling}
+        />
+        <PlaybackControls
+          toggleQueue={this.props.toggleQueue}
+          toggleMute={this.props.toggleMute}
+          queueOpen={this.props.queueOpen}
+          isMuted={this.props.isMuted}
+        />
       </div>
     );
   }

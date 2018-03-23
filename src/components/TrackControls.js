@@ -17,19 +17,34 @@ class TrackControls extends React.Component {
     return (
       <div className="track-controls">
         <div className="track-controls__buttons">
-          <button className="control-button">
+          <button
+            className={`control-button ${this.props.isShuffling ? 'is-active' : ''}`}
+            onClick={this.props.toggleShuffle}
+          >
             <ShuffleIcon />
           </button>
-          <button className="control-button">
+          <button
+            className="control-button"
+            onClick={this.props.previousTrack}
+          >
             <PreviousIcon />
           </button>
-          <button className="control-button control-button__play">
-            <PlayIcon />
+          <button
+            className="control-button control-button__play"
+            onClick={this.props.togglePlay}
+          >
+            {this.props.isPlaying ? <PauseIcon /> : <PlayIcon />}
           </button>
-          <button className="control-button">
+          <button
+            className="control-button"
+            onClick={this.props.nextTrack}
+          >
             <NextIcon />
           </button>
-          <button className="control-button">
+          <button
+            className={`control-button ${this.props.isLooping ? 'is-active' : ''}`}
+            onClick={this.props.toggleLoop}
+          >
             <LoopIcon />
           </button>
         </div>

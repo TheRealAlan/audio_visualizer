@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "react-dom";
 
-import AudioVisualizer from "./AudioVisualizer";
+import AudioVisualizer from "./components/AudioVisualizer";
 import registerServiceWorker from "./registerServiceWorker";
 
 import "normalize.css";

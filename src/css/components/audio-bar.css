@@ -62,6 +62,10 @@
   transition: all 0.05s linear;
 }
 
+.control-button.is-active {
+  color: var(--white);
+}
+
 .control-button:hover {
   color: var(--white);
   transform: scale(1.1);
@@ -79,7 +83,6 @@
 
 .control-button__play svg {
   height: 16px;
-  margin-right: -2px;
 }
 
 .control-time {

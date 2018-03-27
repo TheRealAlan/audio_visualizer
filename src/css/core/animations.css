@@ -1,0 +1,41 @@
+/**
+ * Slide Up
+ */
+.slideup-enter {
+  transform: translateY(99.99%);
+}
+
+.slideup-enter.slideup-enter-active {
+  transform: translateY(0);
+  transition: transform 250ms ease-out;
+}
+
+.slideup-exit {
+  transform: translateY(0);
+}
+
+.slideup-exit.slideup-exit-active {
+  transform: translateY(99.99%);
+  transition: transform 250ms ease-in;
+}
+
+/**
+ * Slide Left
+ */
+.slideleft-enter {
+  transform: translateX(99.99%);
+}
+
+.slideleft-enter.slideleft-enter-active {
+  transform: translateX(0);
+  transition: transform 250ms ease-out;
+}
+
+.slideleft-exit {
+  transform: translateX(0);
+}
+
+.slideleft-exit.slideleft-exit-active {
+  transform: translateX(99.99%);
+  transition: transform 250ms ease-in;
+}

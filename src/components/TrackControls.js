@@ -1,6 +1,7 @@
 import React from "react";
+import { formatTime } from "../helpers";
 
-import ControlBar from "./ControlBar";
+import ControlSeek from "./ControlSeek";
 
 /**
  * Import SVG Icons
@@ -49,9 +50,17 @@ class TrackControls extends React.Component {
           </button>
         </div>
         <div className="track-controls__bar">
-          <div className="control-time">0:00</div>
-          <ControlBar />
-          <div className="control-time">0:00</div>
+          <div className="control-time">
+            {this.props.trackTime ? formatTime(this.props.trackTime) : "0:00"}
+          </div>
+          <ControlSeek 
+            trackSeek={this.props.trackSeek}
+            trackTime={this.props.trackTime}
+            trackDuration={this.props.trackDuration}
+          />
+          <div className="control-time">
+            {this.props.trackDuration ? formatTime(this.props.trackDuration) : "0:00"}
+          </div>
         </div>
       </div>
     );

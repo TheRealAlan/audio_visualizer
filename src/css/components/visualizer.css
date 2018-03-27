@@ -7,3 +7,42 @@
   height: calc(100vh - var(--audiobar-height));
   z-index: 0;
 }
+
+.control-button__options {
+  position: absolute;
+  top: calc(var(--gutter) / 2);
+  right: calc(var(--gutter) / 2);
+  z-index: 4;
+}
+
+.visualizer-options {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 320px;
+  height: 100%;
+  background-color: var(--k4);
+  padding: var(--gutter);
+  overflow: hidden;
+  backface-visibility: hidden;
+}
+
+.visualizer-options__inner {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.visualizer-options__item {
+  color: var(--k2);
+  display: block;
+  width: 100%;
+  padding: var(--gutter) 0;
+  border-bottom: 1px solid currentColor;
+  transition: all 0.15s linear;
+  outline: none;
+}
+
+.visualizer-options__item:hover,
+.visualizer-options__item.is-active {
+  color: var(--white);
+}

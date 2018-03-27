@@ -3,6 +3,7 @@
  */
 @import "./core/variables.css";
 @import "./core/elements.css";
+@import "./core/animations.css";
 
 /**
  * Components

@@ -15,15 +15,20 @@ class AudioBar extends React.Component {
           toggleLoop={this.props.toggleLoop}
           nextTrack={this.props.nextTrack}
           previousTrack={this.props.previousTrack}
+          trackSeek={this.props.trackSeek}
           isPlaying={this.props.isPlaying}
           isLooping={this.props.isLooping}
           isShuffling={this.props.isShuffling}
+          trackDuration={this.props.trackDuration}
+          trackTime={this.props.trackTime}
         />
         <PlaybackControls
           toggleQueue={this.props.toggleQueue}
           toggleMute={this.props.toggleMute}
           queueOpen={this.props.queueOpen}
           isMuted={this.props.isMuted}
+          volume={this.props.volume}
+          changeVolume={this.props.changeVolume}
         />
       </div>
     );

@@ -1,7 +1,28 @@
 .queue-list {
   position: fixed;
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - var(--audiobar-height));
   background-color: var(--k4);
   z-index: 1;
+  backface-visibility: hidden;
+  padding: var(--gutter);
+  overflow-y: auto;
+}
+
+.queue-list__inner {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.queue-list__item {
+  display: flex;
+  align-items: center;
+  color: var(--k2);
+  padding: var(--gutter) 0;
+  border-bottom: 1px solid currentColor;
+  transition: all 0.15s linear;
+}
+
+.queue-list__item:hover {
+  color: var(--white);
 }

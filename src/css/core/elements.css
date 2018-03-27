@@ -61,3 +61,10 @@ button::-moz-focus-inner {
 svg {
   fill: currentColor;
 }
+
+/**
+ * Range Input
+ */
+input[type='range'] {
+  flex: 1;
+}

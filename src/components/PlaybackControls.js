@@ -1,6 +1,6 @@
 import React from "react";
 
-import ControlBar from "./ControlBar";
+import ControlVolume from "./ControlVolume";
 
 import MenuIcon from "../svg/menu.svg";
 import VolumeIcon from "../svg/volume.svg";
@@ -23,7 +23,10 @@ class PlaybackControls extends React.Component {
           >
             {this.props.isMuted ? <MuteIcon/> : <VolumeIcon />}
           </button>
-          <ControlBar />
+          <ControlVolume
+            volume={this.props.volume}
+            changeVolume={this.props.changeVolume}
+          />
         </div>
       </div>
     );

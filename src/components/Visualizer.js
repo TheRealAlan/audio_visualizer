@@ -1,4 +1,5 @@
 import React from "react";
+// import * as THREE from "three";
 
 import OptionsList from "./OptionsList";
 
@@ -41,8 +42,8 @@ class Visualizer extends React.Component {
   
         ctx.beginPath();
         waveform.forEach((f, i) => ctx.lineTo(i, f));
-        ctx.lineTo(0, 255);
-        frequencies.forEach((f, i) => ctx.lineTo(i, 255 - f));
+        ctx.lineTo(0, 768);
+        frequencies.forEach((f, i) => ctx.lineTo(i, 768 - f));
         ctx.stroke();
       };
   
@@ -60,27 +61,69 @@ class Visualizer extends React.Component {
 
       const draw = () => {
         requestAnimationFrame(draw);
-
-        analyzer.getByteFrequencyData(dataArray);
-
-        ctx.fillStyle = 'rgb(0, 0, 0)';
-        ctx.fillRect(0, 0, width, height);
-        let barWidth = (width / bufferLength) * 2.5;
+        const barWidth = (width / bufferLength) * 2.5;
         let barHeight = 0;
         let x = 0;
 
+        analyzer.getByteFrequencyData(dataArray);
+        ctx.fillStyle = 'rgb(0, 0, 0)';
+        ctx.fillRect(0, 0, width, height);
+
         for (let i = 0; i < bufferLength; i++) {
-          barHeight = dataArray[i];
-
-          ctx.fillStyle = 'rgb(' + (barHeight + 100) + ',50,50)';
-          ctx.fillRect(x, height - barHeight / 2, barWidth, barHeight / 2);
-
+          barHeight = dataArray[i] * 4;
+          ctx.fillStyle = `rgb(${barHeight + 100},255,0)`;
+          ctx.fillRect(x, height - barHeight, barWidth, barHeight);
           x += barWidth + 1;
-        }
+        };
       };
 
       draw();
     }
+
+  //   if (this.props.currentVisualizer === "lines") {
+  //     const scene = new THREE.Scene();
+  //     const renderer = new THREE.WebGLRenderer({ domElement: this.refs.canvas });
+  //     const width = this.refs.canvas.width;
+  //     const height = this.refs.canvas.height;
+  //     const camera = new THREE.PerspectiveCamera(
+  //       75,
+  //       width / height,
+  //       1,
+  //       10000
+  //     );
+  //     camera.position.z = 1000;
+  //     renderer.setSize(width, height);
+  //     // renderer.domElement = this.refs.canvas;
+
+  //     const newLine = () => {
+  //       let material = new THREE.LineBasicMaterial({
+  //         color: 0x00ff00
+  //       });
+  //       let geometry = new THREE.Geometry();
+  //       let line = new THREE.Line(geometry, material);
+  //       let array = new Uint8Array(analyzer.frequencyBinCount);
+  //       let Ypoints = array;
+  //       let xPoint = -2048;
+
+  //       analyzer.getByteFrequencyData(array);
+  //       scene.remove(line);
+
+  //       for (let i = 0; i < Ypoints.length; i++) {
+  //         geometry.vertices.push(new THREE.Vector3(xPoint, Ypoints[i], 0));
+  //         xPoint = xPoint + 4;
+  //       };
+
+  //       scene.add(line);
+  //     };
+
+  //     const draw = () => {
+  //       requestAnimationFrame(draw);
+  //       newLine();
+  //       renderer.render(scene, camera);
+  //     };
+
+  //     draw();
+  //   }
   }
 
   render() {
@@ -89,6 +132,8 @@ class Visualizer extends React.Component {
         <canvas
           className="visualizer"
           ref="canvas"
+          width={1920}
+          height={1080}
         />
         <button
           className={`control-button control-button__options ${this.props.optionsOpen ? 'is-active' : ''}`}

@@ -7,7 +7,7 @@ import QueueList from "./QueueList";
 
 import tracklist from "../tracklist";
 
-import song from "../tracks/01 - Beauty and the Beast (2017 Remastered Version).mp3";
+import song from "../tracks/Tame Impala/Currents [Explicit]/01 - Let It Happen.mp3";
 
 class AudioVisualizer extends React.Component {
   constructor(props) {
@@ -32,6 +32,7 @@ class AudioVisualizer extends React.Component {
     this.options = [
       "waves",
       "bars",
+      "lines",
     ];
 
     this.currentTrack = new Audio();
@@ -55,12 +56,14 @@ class AudioVisualizer extends React.Component {
     this.setState(prevState => ({
       isLooping: !prevState.isLooping,
     }));
+    this.state.isLooping ? this.currentTrack.loop = false : this.currentTrack.loop = true;
   };
 
   toggleMute = () => {
     this.setState(prevState => ({
       isMuted: !prevState.isMuted,
     }));
+    this.state.isMuted ? this.currentTrack.muted = false : this.currentTrack.muted = true;
   };
 
   toggleQueue = () => {
